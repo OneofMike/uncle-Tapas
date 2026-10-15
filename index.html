@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uncle's Tapas Bar &amp; Grill — Filipino Flavor. Vegas Energy.</title>
+<meta name="description" content="Uncle's Tapas Bar & Grill — Filipino food, drinks, live music, karaoke and dancing in Las Vegas.">
+<style>
+  :root{
+    --espresso:#171009;
+    --espresso-2:#221709;
+    --cream:#f4ead8;
+    --cream-2:#ece0c8;
+    --burgundy:#6e1f2b;
+    --red:#a5312c;
+    --orange:#c96a2a;
+    --gold:#c9a24b;
+    --ink:#2a1c10;
+    --serif:Georgia,'Times New Roman',serif;
+    --sans:'Helvetica Neue',Arial,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--sans);background:var(--espresso);color:var(--cream);line-height:1.6}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+
+  /* ---------- Nav ---------- */
+  nav{position:sticky;top:0;z-index:50;background:rgba(23,16,9,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,162,75,.25)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{font-family:var(--serif);font-size:22px;letter-spacing:.5px}
+  .brand span{color:var(--gold)}
+  .nav-links{display:flex;gap:26px;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+  .nav-links a:hover{color:var(--gold)}
+  .nav-cta{background:var(--red);padding:9px 18px;border-radius:999px;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+  @media(max-width:820px){.nav-links{display:none}}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:72px 0 84px;background:
+    radial-gradient(1200px 500px at 85% -10%,rgba(201,106,42,.16),transparent 60%),
+    radial-gradient(900px 500px at -10% 110%,rgba(110,31,43,.35),transparent 55%),var(--espresso)}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+  .eyebrow{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+  h1{font-family:var(--serif);font-size:clamp(44px,6vw,76px);line-height:1.02;font-weight:700}
+  h1 em{font-style:italic;color:var(--orange)}
+  .hero p.lead{margin:22px 0 30px;max-width:46ch;color:#e6d9c2;font-size:17px}
+  .btn{display:inline-block;padding:14px 28px;border-radius:999px;font-size:14px;letter-spacing:.12em;text-transform:uppercase;border:1px solid transparent}
+  .btn-primary{background:var(--red);color:var(--cream)}
+  .btn-primary:hover{background:var(--burgundy)}
+  .btn-ghost{border-color:rgba(244,234,216,.4);color:var(--cream);margin-left:12px}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+  .hero-note{margin-top:18px;font-size:13px;color:#bda88a;font-style:italic;font-family:var(--serif)}
+
+  /* Polaroid collage */
+  .collage{position:relative;height:480px}
+  .polaroid{position:absolute;background:#fbf6ea;padding:10px 10px 34px;box-shadow:0 14px 34px rgba(0,0,0,.5);border-radius:3px}
+  .polaroid img{width:100%;height:100%;object-fit:cover;aspect-ratio:1.15;border-radius:2px}
+  .polaroid figcaption{position:absolute;left:0;right:0;bottom:6px;text-align:center;font-family:'Comic Sans MS','Segoe Script',cursive;font-size:14px;color:#4a3516}
+  .polaroid::before{content:"";position:absolute;top:-12px;left:50%;transform:translateX(-50%) rotate(-3deg);width:78px;height:22px;background:rgba(201,162,75,.5);border-radius:2px}
+  .p1{width:46%;top:0;left:2%;transform:rotate(-4deg)}
+  .p2{width:44%;top:6%;right:0;transform:rotate(3deg)}
+  .p3{width:42%;bottom:8%;left:10%;transform:rotate(2.5deg)}
+  .p4{width:40%;bottom:0;right:6%;transform:rotate(-3deg)}
+  @media(max-width:900px){
+    .hero .wrap{grid-template-columns:1fr}
+    .collage{height:340px;margin-top:8px}
+  }
+
+  /* ---------- Quick actions (cream paper) ---------- */
+  .paper{background:var(--cream);color:var(--ink);
+    background-image:repeating-linear-gradient(0deg,rgba(42,28,16,.025) 0 2px,transparent 2px 5px)}
+  .quick{padding:34px 0}
+  .quick .row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+  .quick a{background:#fffdf6;border:1px solid rgba(42,28,16,.14);border-radius:12px;padding:14px 22px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 3px 0 rgba(42,28,16,.12)}
+  .quick a:hover{border-color:var(--red);color:var(--red)}
+
+  /* ---------- Sections ---------- */
+  section{padding:88px 0}
+  .sec-head{max-width:640px;margin-bottom:44px}
+  h2{font-family:var(--serif);font-size:clamp(32px,4vw,50px);line-height:1.08}
+  h2 em{font-style:italic;color:var(--red)}
+  .dark h2 em{color:var(--orange)}
+  .sec-head p{margin-top:14px;color:#5c4a35}
+  .dark .sec-head p{color:#d8c9ae}
+  .kicker{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--burgundy);margin-bottom:12px}
+  .dark .kicker{color:var(--gold)}
+
+  /* Food */
+  .food-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .food-collage{position:relative;height:460px}
+  .food-collage .polaroid{box-shadow:0 12px 28px rgba(42,28,16,.28)}
+  .f1{width:52%;top:0;left:0;transform:rotate(-3deg)}
+  .f2{width:48%;top:14%;right:0;transform:rotate(3.5deg)}
+  .f3{width:46%;bottom:0;left:16%;transform:rotate(-2deg)}
+  .food-list{list-style:none;margin:26px 0 30px}
+  .food-list li{padding:12px 0;border-bottom:1px dashed rgba(42,28,16,.25);display:flex;justify-content:space-between;gap:16px;font-size:15px}
+  .food-list b{font-family:var(--serif);font-size:17px}
+  .food-list span{color:var(--burgundy);font-weight:600;white-space:nowrap}
+  .btn-dark{background:var(--espresso);color:var(--cream)}
+  .btn-dark:hover{background:var(--burgundy)}
+  @media(max-width:900px){.food-grid{grid-template-columns:1fr}.food-collage{height:380px}}
+
+  /* Events (dark) */
+  .dark{background:
+    radial-gradient(900px 400px at 100% 0,rgba(110,31,43,.4),transparent 60%),var(--espresso-2)}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .card{background:#2a1c10;border:1px solid rgba(201,162,75,.28);border-radius:14px;overflow:hidden}
+  .card img{height:180px;width:100%;object-fit:cover}
+  .card .body{padding:20px}
+  .card h3{font-family:var(--serif);font-size:21px;margin-bottom:6px}
+  .card .meta{font-size:13px;color:var(--gold);letter-spacing:.08em;text-transform:uppercase}
+  .card p{font-size:14px;color:#d8c9ae;margin-top:10px}
+  @media(max-width:900px){.cards{grid-template-columns:1fr}}
+
+  /* Parties / catering */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .split img{border-radius:14px;box-shadow:0 16px 40px rgba(42,28,16,.3);aspect-ratio:4/3;object-fit:cover;width:100%}
+  .tick{list-style:none;margin-top:20px}
+  .tick li{padding:8px 0 8px 30px;position:relative;font-size:15px}
+  .tick li::before{content:"✦";position:absolute;left:0;color:var(--red)}
+  @media(max-width:900px){.split{grid-template-columns:1fr}}
+
+  /* Menu preview */
+  .menu-cols{display:grid;grid-template-columns:1fr 1fr;gap:0 56px}
+  .menu-item{padding:14px 0;border-bottom:1px dashed rgba(244,234,216,.18)}
+  .menu-item .top{display:flex;justify-content:space-between;gap:16px}
+  .menu-item b{font-family:var(--serif);font-size:17px}
+  .menu-item .price{color:var(--gold);font-weight:600}
+  .menu-item p{font-size:13.5px;color:#cbb998;margin-top:3px}
+  @media(max-width:820px){.menu-cols{grid-template-columns:1fr}}
+
+  /* CTA + footer */
+  .cta{text-align:center;padding:80px 0}
+  footer{border-top:1px solid rgba(201,162,75,.25);padding:34px 0;font-size:13px;color:#bda88a;text-align:center}
+  .fineprint{font-size:12px;color:#8a755a;margin-top:26px;font-style:italic}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Uncle's <span>Tapas Bar &amp; Grill</span></div>
+    <div class="nav-links">
+      <a href="#menu">Menu</a><a href="#events">Events</a><a href="#parties">Parties</a><a href="#catering">Catering</a>
+    </div>
+    <a class="nav-cta" href="#reserve">Reserve a Table</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Las Vegas · Filipino Kitchen &amp; Nightlife</div>
+      <h1>FILIPINO FLAVOR.<br><em>Vegas Energy.</em></h1>
+      <p class="lead">Great Filipino food, cold drinks, live music, dancing and karaoke — all under one roof. Come for dinner, stay for the party.</p>
+      <a class="btn btn-primary" href="#menu">View Menu</a>
+      <a class="btn btn-ghost" href="#reserve">Reserve a Table</a>
+      <div class="hero-note">"The food tastes like home — the nights feel like Vegas."</div>
+    </div>
+    <div class="collage">
+      <figure class="polaroid p1"><img src="assets/uncles-4797.jpeg" alt="Pancit noodles with shrimp"><figcaption>pancit night</figcaption></figure>
+      <figure class="polaroid p2"><img src="assets/uncles-4796.jpeg" alt="Boba milk teas"><figcaption>ice-cold sips</figcaption></figure>
+      <figure class="polaroid p3"><img src="assets/uncles-4801.jpeg" alt="Crispy pork belly"><figcaption>crispy pork belly</figcaption></figure>
+      <figure class="polaroid p4"><img src="assets/nightlife.jpg" alt="Nightlife at Uncle's"><figcaption>late nights</figcaption></figure>
+    </div>
+  </div>
+</header>
+
+<div class="paper quick">
+  <div class="wrap row">
+    <a href="#order">Order Online</a>
+    <a href="#reserve">Reservations</a>
+    <a href="#events">Events</a>
+    <a href="#parties">Parties</a>
+    <a href="#catering">Catering</a>
+    <a href="#jobs">Jobs</a>
+  </div>
+</div>
+
+<section class="paper" id="food">
+  <div class="wrap food-grid">
+    <div class="food-collage">
+      <figure class="polaroid f1"><img src="assets/uncles-4799.jpeg" alt="Whole fried fish"><figcaption>whole fried fish</figcaption></figure>
+      <figure class="polaroid f2"><img src="assets/uncles-4795.jpeg" alt="Sizzling sisig-style dish"><figcaption>sizzling plate</figcaption></figure>
+      <figure class="polaroid f3"><img src="assets/uncles-4800.jpeg" alt="Halo-halo dessert"><figcaption>halo-halo</figcaption></figure>
+    </div>
+    <div>
+      <div class="kicker">The Kitchen</div>
+      <h2>A Taste of the Philippines<br><em>at the Heart of Las Vegas</em></h2>
+      <ul class="food-list">
+        <li><b>Sizzling Sisig</b><span>$16.95</span></li>
+        <li><b>Crispy Pata</b><span>$21.95</span></li>
+        <li><b>Pancit Bihon</b><span>$14.95</span></li>
+        <li><b>Whole Fried Fish</b><span>$19.95</span></li>
+        <li><b>Halo-Halo</b><span>$9.95</span></li>
+      </ul>
+      <a class="btn btn-dark" href="#menu">Explore the Menu</a>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="events">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Events &amp; Nightlife</div>
+      <h2>Live Bands, DJs &amp; <em>Karaoke Nights</em></h2>
+      <p>The room comes alive after dinner — live music, ballroom nights, holiday parties and karaoke until late.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <img src="assets/nightlife.jpg" alt="Live band night">
+        <div class="body"><div class="meta">Fridays · 9 PM</div><h3>Live Band Fridays</h3><p>Local bands playing OPM favorites and dance-floor classics.</p></div>
+      </div>
+      <div class="card">
+        <img src="assets/bar.jpg" alt="Karaoke night at the bar">
+        <div class="body"><div class="meta">Saturdays · 10 PM</div><h3>Karaoke Saturdays</h3><p>Grab the mic — open karaoke with drinks flowing all night.</p></div>
+      </div>
+      <div class="card">
+        <img src="assets/uncles-4796.jpeg" alt="Drinks and social nights">
+        <div class="body"><div class="meta">Monthly</div><h3>Ballroom &amp; Social Nights</h3><p>Dress up, dance, and celebrate with the community.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="paper" id="parties">
+  <div class="wrap split">
+    <div>
+      <div class="kicker">Parties &amp; Catering</div>
+      <h2>Celebrate <em>the Filipino Way</em></h2>
+      <p style="margin-top:14px;color:#5c4a35">Birthdays, family gatherings, corporate events and private parties — we'll feed the whole barangay.</p>
+      <ul class="tick">
+        <li>Private party bookings for groups large and small</li>
+        <li>Full-service catering with classic Filipino trays</li>
+        <li>Custom menus for birthdays, debuts and reunions</li>
+        <li>Live entertainment packages available</li>
+      </ul>
+      <p style="margin-top:22px"><a class="btn btn-dark" href="#reserve">Plan Your Event</a></p>
+    </div>
+    <img src="assets/uncles-4798.jpeg" alt="Pancit and shrimp platter for sharing">
+  </div>
+</section>
+
+<section class="dark" id="menu">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">The Menu</div>
+      <h2>Uncle's <em>Favorites</em></h2>
+      <p>A preview of the full menu — appetizers, noodles, beef, pork, chicken, seafood, vegetables, rice, desserts and cocktails.</p>
+    </div>
+    <div class="menu-cols">
+      <div class="menu-item"><div class="top"><b>Lumpiang Shanghai</b><span class="price">$9.95</span></div><p>Crispy pork spring rolls with sweet chili sauce.</p></div>
+      <div class="menu-item"><div class="top"><b>Sizzling Sisig</b><span class="price">$16.95</span></div><p>Chopped pork on a sizzling plate with citrus and peppers.</p></div>
+      <div class="menu-item"><div class="top"><b>Pancit Bihon</b><span class="price">$14.95</span></div><p>Rice noodles with shrimp, vegetables and savory sauce.</p></div>
+      <div class="menu-item"><div class="top"><b>Crispy Pata</b><span class="price">$21.95</span></div><p>Deep-fried pork knuckle, crackling skin, vinegar dip.</p></div>
+      <div class="menu-item"><div class="top"><b>Whole Fried Fish</b><span class="price">$19.95</span></div><p>Crisp whole fish with tomatoes, onions and scallions.</p></div>
+      <div class="menu-item"><div class="top"><b>Kare-Kare</b><span class="price">$18.95</span></div><p>Oxtail in rich peanut sauce with bagoong.</p></div>
+      <div class="menu-item"><div class="top"><b>Chicken Adobo</b><span class="price">$15.95</span></div><p>The classic — soy, vinegar, garlic, bay leaf.</p></div>
+      <div class="menu-item"><div class="top"><b>Halo-Halo</b><span class="price">$9.95</span></div><p>Shaved ice, ube ice cream, fruit and leche flan.</p></div>
+    </div>
+    <p class="fineprint">Menu items and prices shown are provisional and will be finalized with the restaurant.</p>
+  </div>
+</section>
+
+<section class="paper cta" id="reserve">
+  <div class="wrap">
+    <div class="kicker">Join Us</div>
+    <h2>Reserve a Table. <em>Stay for the Show.</em></h2>
+    <p style="margin:16px auto 28px;max-width:52ch;color:#5c4a35">Online reservations, ordering and event booking are coming soon. For now, call the restaurant to book your table or party.</p>
+    <a class="btn btn-dark" href="#">Call to Reserve</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Uncle's Tapas Bar &amp; Grill · Las Vegas · Filipino food, drinks &amp; live entertainment<br>
+    <span style="opacity:.7">Demo website — content and photos to be finalized with the owner.</span>
+  </div>
+</footer>
+
+</body>
+</html>
